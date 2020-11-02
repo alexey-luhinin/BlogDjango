@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from .models import Articles
 
-# Create your views here.
+
 def index(request):
     return render(request, 'main/index.html')
 
@@ -11,4 +12,6 @@ def contacts(request):
     return render(request, 'main/contacts.html')
 
 def articles(request):
-    return render(request, 'main/articles.html')
+    article = Articles.objects.all()
+    articles = {'articles' : article,}
+    return render(request, 'main/articles.html', articles)

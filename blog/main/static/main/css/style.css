@@ -253,13 +253,11 @@ figure figcaption {
 
 #fh5co-main {
   padding-top: 40px;
-  background-color: floralwhite;
   width: 80%;
   float: right;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  height: 100vh;
 }
 @media screen and (max-width: 1200px) {
   #fh5co-main {
