@@ -1,0 +1,4 @@
+/venv/*
+/blog/blog/__pycache__/*
+/blog/main/__pycache__/*
+/blog/main/migrations/__pycache__/*
