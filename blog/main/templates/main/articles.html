@@ -9,15 +9,15 @@
 <div class="fh5co-narrow-content">
 	<h1>Статьи</h1>
 </div>
-<div class="fh5co-narrow-content">
+<div class="fh5co-narrow-content" >
 	<div class="row row-bottom-padded-md">
 	{% for article in articles %}
 			<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 				<div class="blog-entry">
-					<a href="#" class="blog-img"><img src="{{ article.image.url }}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+					<a href="#" class="blog-img"><img src="{{ article.image.url }}" class="img-responsive"></a>
 					<div class="desc">
 						<h3><a href="#">{{ article.title }}</a></h3>
-						<span><small>by Admin </small> / <small>{{ article.category.title }}</small> / <small> <i class="icon-comment"></i> {{ article.date }}</small></span>
+						<b><span><small>by Admin </small> / <small>{{ article.category.title }}</small> / <small> <i class="icon-comment"></i> {{ article.date }}</small></span></b>
 						<p>{{ article.description }}</p>
 						<a href="#" class="lead">Читать <i class="icon-arrow-right3"></i></a>
 					</div>
