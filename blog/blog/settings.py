@@ -127,3 +127,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/media')
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+LOGIN_REDIRECT_URL = 'home'

@@ -6,24 +6,37 @@
 {% endblock %}
 
 {% block content %}
-<div class="fh5co-narrow-content">
-	<h1>Статьи</h1>
-</div>
-<div class="fh5co-narrow-content" >
-	<div class="row row-bottom-padded-md">
+<div class="content__content-items">
 	{% for article in articles %}
-			<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
-				<div class="blog-entry">
-					<a href="#" class="blog-img"><img src="{{ article.image.url }}" class="img-responsive"></a>
-					<div class="desc">
-						<h3><a href="#">{{ article.title }}</a></h3>
-						<b><span><small>by Admin </small> / <small>{{ article.category.title }}</small> / <small> <i class="icon-comment"></i> {{ article.date }}</small></span></b>
-						<p>{{ article.description }}</p>
-						<a href="#" class="lead">Читать <i class="icon-arrow-right3"></i></a>
-					</div>
+	<div class="content__item">
+		<div>
+			<img class="content__item-img" src="{{ article.image.url }}" alt="">	
+		</div>
+		<div class="content__description">
+			<div class="content__item-title">
+				{{ article.title }}
+			</div>
+			<div class="content__item-text">
+				{{ article.description }}
+			</div>
+			<div>
+				<img class="content__divider" src="{% static "main/img/divider.png" %}" alt="">
+			</div>
+			<div class="content__info">
+
+				<div class="content__date">
+					<span class="content__date-text">
+						{{ article.date }}
+					</span>
+				</div>
+				<div class="content__comments">
+					<span class="content__comments-count">
+						15
+					</span>
 				</div>
 			</div>
-	{% endfor %}
+		</div>
 	</div>
+	{% endfor %}
 </div>
 {% endblock %}
