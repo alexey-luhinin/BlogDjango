@@ -6,6 +6,14 @@
 {% endblock %}
 
 {% block content %}
+
+{% if user.is_superuser %}
+	<div class="admin-only">
+		<span class="admin-only__greeting">Привет, {{ user }}</span>
+		<a class="admin-only__add-article" href={% url 'add_article' %}>Добавить статью</a>
+	</div>
+{% endif %}
+
 <div class="content__content-items">
 	{% for article in articles %}
 	<div class="content__item">
@@ -14,7 +22,7 @@
 		</div>
 		<div class="content__description">
 			<div class="content__item-title">
-				{{ article.title }}
+				<a class="content__title-link" href="article/{{ article.id }}">{{ article.title }}</a>
 			</div>
 			<div class="content__item-text">
 				{{ article.description }}

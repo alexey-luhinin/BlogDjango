@@ -1,7 +1,12 @@
 from django.shortcuts import render, redirect
+from django.views.generic.detail import DetailView
 from .models import Articles
 from .forms import ArticlesForm
 
+
+class ArticleDetailView(DetailView):
+    model = Articles
+    context_object_name = 'article'
 
 def index(request):
     return render(request, 'main/index.html')

@@ -146,6 +146,14 @@ body{
 	margin-bottom: 10px;
 }
 
+.content__title-link {
+	color: #484848;
+}
+
+.content__title-link:hover {
+	color: #000;
+}
+
 .content__item-text{
 	font-size: 13px;
 	line-height: 20px;
@@ -206,3 +214,78 @@ body{
 }
 
 /*FOOTER*/
+
+/* ADD ARTICLE */
+
+.add-articles__title {
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+.add-form {
+	margin:20px 0;
+	max-width: 350px;
+	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.add-form label {
+	margin:0px 0px 5px 0px;
+	padding:0px;
+	display:block;
+	font-weight: bold;
+	color: #3a3d40;
+}
+
+.add-form__title, 
+.add-form__description,
+.add-form__category,
+.add-form__text
+{
+	width: 100%;
+	border: 1px solid #000;
+}
+
+.add-form__text {
+	resize: none;
+}
+
+.add-form__image {
+	display: block;
+}
+
+.add-form__button {
+	text-transform: uppercase;
+	width: 100%;
+	margin-top: 20px;	
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	background: #5f9ea0;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	border: 1px solid #5f9ea0;
+	border-width: 1px 1px 3px;
+	margin-bottom: 10px;
+}
+
+
+/* ADD ARTICLE */
+
+/* ADMIN-ARTICLE */
+
+.admin-only {
+	font-size: 13px;
+	text-align: right;
+	color: gray;
+	margin-top: 6px;
+}
+
+.admin-only__add-article {
+	background-color: #5f9ea0;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 5px;
+}
+
+/* ADMIN-ARTICLE */

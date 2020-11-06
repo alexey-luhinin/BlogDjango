@@ -9,26 +9,21 @@ class ArticlesForm(ModelForm):
 
         widgets = {
             'title': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Название'
+                'class': 'add-form__title',
             }),
             'description': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Описание'
+                'class': 'add-form__description',
             }),
             'text': Textarea(attrs={
-                'class': 'form-control',
-                'placeholder': 'Текст статьи',
+                'class': 'add-form__text',
                 'rows': 8,
             }),
 
             'category': Select(attrs={
-                'class': 'form-control',
-                'placeholder': 'Название'
+                'class': 'add-form__category',
             }),
 
             'image': FileInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Название'
-            })
+                'class': 'add-form__image',
+            }),
         }

@@ -5,14 +5,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="fh5co-narrow-content">
-	<div class="articles-form">
-		<h1>Добавление статьи</h1>
-		<form method="post" enctype="multipart/form-data" class="form-group">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button type="submit" class="btn btn-primary">Добавить</button>
-		</form>
-	</div>
+<div class="add-articles">
+	<h1 class="add-articles__title">Добавление статьи</h1>
+	<form class="add-form" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="add-form__button" type="submit">Добавить</button>
+	</form>
 </div>
 {% endblock %}
