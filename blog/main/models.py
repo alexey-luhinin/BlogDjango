@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField('Название', max_length=255)
 
     class Meta:
         verbose_name = 'Категория'

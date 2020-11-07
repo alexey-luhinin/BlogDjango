@@ -43,6 +43,12 @@
 					</span>
 				</div>
 			</div>
+			{% if user.is_superuser %}
+			<div class="admin-panel">
+				<a class="admin-panel__update" href="article/update/{{ article.id }}">Редактировать</a>
+				<a class="admin-panel__delete" href="article/delete/{{ article.id }}">Удалить</a>
+			</div>
+			{% endif %}
 		</div>
 	</div>
 	{% endfor %}

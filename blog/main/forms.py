@@ -1,5 +1,7 @@
 from django.forms import ModelForm, TextInput, Textarea, Select, FileInput
+
 from .models import Articles
+from .models import Category
 
 
 class ArticlesForm(ModelForm):
@@ -25,5 +27,17 @@ class ArticlesForm(ModelForm):
 
             'image': FileInput(attrs={
                 'class': 'add-form__image',
+            }),
+        }
+
+
+class CategoryForm(ModelForm):
+    class Meta:
+        model = Category
+        fields = ['title']
+
+        widgets = {
+            'title': TextInput(attrs={
+                'class': 'add-form__title',
             }),
         }

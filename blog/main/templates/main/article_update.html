@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+<title>Редактирование статьи</title>
+{% endblock %}
+
+{% block content %}
+<div class="add-articles">
+	<h1 class="add-articles__title">Редактирование статьи</h1>
+	<form class="add-form" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="add-form__button" type="submit">Обновить</button>
+	</form>
+</div>
+{% endblock %}

@@ -51,9 +51,6 @@ body{
 
 /*HEADER*/
 
-.content{
-	flex: 1 0 auto;
-}
 
 .header {
 	background-color: #3a3d40;
@@ -114,6 +111,9 @@ body{
 /*CONTENT*/
 
 
+.content{
+	flex: 1 0 auto;
+}
 
 .content__content-items{
 	display: flex;
@@ -122,9 +122,6 @@ body{
 	margin-top: 40px;
 }
 
-.content__description{
-	padding: 10px 20px;
-}
 
 .content__item{
 	width: 30%;
@@ -135,6 +132,10 @@ body{
 
 .content__item-img{
 	width: 100%;
+}
+
+.content__description{
+	padding: 10px 20px;
 }
 
 .content__item-title{
@@ -195,6 +196,31 @@ body{
 	line-height: 20px;
 }
 
+.admin-panel {
+	margin-top: 5px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.admin-panel__update {
+	text-align: center;
+	width: 50%;
+	display: block;
+	background-color: #add8e6;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 5px;
+}
+
+.admin-panel__delete {
+	text-align: center;
+	width: 50%;
+	display: block;
+	background-color: #f08080;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 5px;
+}
 
 /*CONTENT*/
 
