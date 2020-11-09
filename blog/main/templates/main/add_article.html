@@ -8,6 +8,7 @@
 <div class="add-articles">
 	<h1 class="add-articles__title">Добавление статьи</h1>
 	<form class="add-form" method="post" enctype="multipart/form-data">
+		<a class="add-form__add-category" href={% url 'add_category' %}></a>
 		{% csrf_token %}
 		{{ form.as_p }}
 		<button class="add-form__button" type="submit">Добавить</button>

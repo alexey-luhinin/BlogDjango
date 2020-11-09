@@ -2,6 +2,13 @@ from django.forms import ModelForm, TextInput, Textarea, Select, FileInput
 
 from .models import Articles
 from .models import Category
+from .models import Comments
+
+
+class CommentsForm(ModelForm):
+    class Meta: 
+        model = Comments
+        fields = ['article', 'author', 'text']
 
 
 class ArticlesForm(ModelForm):

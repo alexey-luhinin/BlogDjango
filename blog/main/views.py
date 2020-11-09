@@ -7,7 +7,7 @@ from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 
 from .models import Articles, Category
-from .forms import ArticlesForm, CategoryForm
+from .forms import ArticlesForm, CategoryForm, CommentsForm
 
 
 class CategoryCreateView(CreateView):
@@ -22,6 +22,19 @@ class CategoryCreateView(CreateView):
 class ArticleDetailView(DetailView):
     model = Articles
     context_object_name = 'article'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        form = CommentsForm()
+        context['form'] = form
+        return context
+
+    def post(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            form = CommentsForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('articles')
 
 
 class ArticleUpdateView(UpdateView):

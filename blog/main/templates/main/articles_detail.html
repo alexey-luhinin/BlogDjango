@@ -5,7 +5,15 @@
 {% endblock %}
 
 {% block content %}
-	<img src="{{ article.image.url }}" alt="">
-	<h1>{{ article.title }}</h1>
-	<p>{{ article.text }}</p>
+<div class="article-detail article-detail--position">
+	<h1 class="article-detail__title">{{ article.title }}</h1>
+	<div class="article-detail__text">{{ article.text|safe|linebreaks }}</div>
+	{% if user.is_authenticated %}
+	<form method="post" action="{{ article.id }}">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Комментировать">
+	</form>
+	{% endif %}
+</div>
 {% endblock %}
