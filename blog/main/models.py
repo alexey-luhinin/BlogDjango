@@ -31,8 +31,12 @@ class Articles(models.Model):
 class Comments(models.Model):
     article = models.ForeignKey(Articles, on_delete=models.CASCADE)
     author = models.CharField(max_length=255)
-    text = models.TextField()
+    text = models.TextField('Добавить комментарий')
+    date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Коментарий'
         verbose_name_plural = 'Коментарии'
+
+    def __str__(self):
+        return str(self.article)

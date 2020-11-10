@@ -8,12 +8,26 @@
 <div class="article-detail article-detail--position">
 	<h1 class="article-detail__title">{{ article.title }}</h1>
 	<div class="article-detail__text">{{ article.text|safe|linebreaks }}</div>
-	{% if user.is_authenticated %}
-	<form method="post" action="{{ article.id }}">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Комментировать">
-	</form>
+	{% if comments.count > 0 %}
+	<div class="comments">
+		<p class="comments__title">Комментарии:</p>
+		{% for comment in comments %}
+			<p class="comments__author">{{ comment.author }} | {{ comment.date }}</p>
+			<p class="comments__text">{{ comment.text }}</p>
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	{% if user.is_authenticated%}
+	<div class="add-comments">
+		<form class="add-comments__form" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input class="add-comments__button" type="submit" value="Отправить">
+		</form>
+	</div>
+	{% else %}
+		<p>Авторизируйтесь, чтобы добавить комментарий!</p>
 	{% endif %}
 </div>
 {% endblock %}

@@ -370,3 +370,71 @@ body{
 }
 
 /* ARTICLES DEAIL VIEW */
+
+/* DETAIL VIEW COMMENTS */
+
+.comments {
+	margin: 20px 0;
+}
+
+.comments__title {
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: 700;
+	font-family: 'Roboto Slab', serif;
+}
+
+.comments__author {
+	font-size: 13px;
+	color: #5f9ea0;
+}
+
+.comments__text {
+	font-family: 'Roboto Slab', serif;
+	color: #3a3d40;
+	font-size: 16px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+/* DETAIL VIEW COMMENTS */
+
+/* DETAIL ADD COMMENTS FORM */
+
+.add-comments {
+	margin-top: 40px;
+}
+
+.add-comments__form {
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: 700;
+	font-family: 'Roboto Slab', serif;
+}
+
+.add-comments__text {
+	resize: none;
+	display: block;
+	width: 50%;
+	font-size: 16px;
+	border: 1px solid black;
+	margin-top: 20px;
+}
+
+.add-comments__button {
+	text-transform: uppercase;
+	margin-top: 20px;	
+	display: block;
+	padding: 10px 20px 8px 20px;
+	color: #FFF;
+	background: #5f9ea0;
+	font-size: 16px;
+	text-align: center;
+	font-style: normal;
+	border: 1px solid #5f9ea0;
+	border-width: 1px 1px 3px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+/* DETAIL ADD COMMENTS FORM */

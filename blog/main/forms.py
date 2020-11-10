@@ -1,4 +1,5 @@
-from django.forms import ModelForm, TextInput, Textarea, Select, FileInput
+from django.forms import ModelForm, TextInput, Textarea, Select, FileInput, \
+HiddenInput
 
 from .models import Articles
 from .models import Category
@@ -9,6 +10,16 @@ class CommentsForm(ModelForm):
     class Meta: 
         model = Comments
         fields = ['article', 'author', 'text']
+
+        widgets = {
+            'article' : HiddenInput(),
+            'author' : HiddenInput(),
+
+            'text': Textarea(attrs={
+                'class': 'add-comments__text',
+                'rows': 8,
+            }),
+        }
 
 
 class ArticlesForm(ModelForm):
