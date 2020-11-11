@@ -1,9 +1,25 @@
 from django.forms import ModelForm, TextInput, Textarea, Select, FileInput, \
-HiddenInput
+HiddenInput, PasswordInput
+
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 from .models import Articles
 from .models import Category
 from .models import Comments
+
+
+class Registration(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2',]
+            
+    def __init__(self, *args, **kwargs):
+        super(Registration, self).__init__(*args, **kwargs)
+
+        self.fields['username'].widget.attrs['class'] = 'registration__input'
+        self.fields['password1'].widget.attrs['class'] = 'registration__input'
+        self.fields['password2'].widget.attrs['class'] = 'registration__input'
 
 
 class CommentsForm(ModelForm):

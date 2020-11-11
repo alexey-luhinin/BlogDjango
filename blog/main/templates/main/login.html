@@ -1,0 +1,40 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+<title>Главная</title>
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>Неправильный логин или пароль. Попробуйте еще раз.</p>
+{% endif %}
+
+{% if user.is_authenticated %}
+<p>Вы успешно авторизировались.</p>
+{% else %}
+<div class="login-page">
+	<p class="login-page__title">Вход</p>
+	<form class="login-page__form" method="post" action="{% url 'login' %}">
+		{% csrf_token %}
+		<table class="login-page__table">
+			<tr class="login-page__row">
+				<td class="login-page__column">{{ form.username.label_tag }}</td>
+				<td class="login-page__column">{{ form.username }}</td>
+			</tr>
+			<tr class="login-page__row">
+				<td class="login-page__column">{{ form.password.label_tag }}</td>
+				<td class="login-page__column">{{ form.password }}</td>
+			</tr>
+		</table>
+	<p class="login-page__lost-pass"><a href="#">Забыли пароль?</a></p>
+		<input class="login-page__button" type="submit" value="login">
+		<input type="hidden" name="next" value="{% url 'login' %}">
+	</form>
+
+	{# Assumes you setup the password_reset view in your URLconf #}
+</div>
+{% endif %}
+
+
+{% endblock %}
