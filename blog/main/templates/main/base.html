@@ -14,7 +14,6 @@
 	<div class="wrapper">
 		<header class="header">
 		<div class="container container--flex">
-
 			<div class="header__logo"><img class="header__logo-img" src="{% static "main/img/header__logo.png" %}" alt=""></div>
 
 			<ul class="header__top-menu">
@@ -33,6 +32,14 @@
 			</ul>
 		</div>
 	</header>
+	<div class="auth-links">
+		{% if not user.is_authenticated %}
+		<span class="auth-links__registration"><a href="{% url 'registration' %}">Регистрация</a></span>
+		<span class="auth-links__login"><a href="{% url 'login' %}">Войти</a></span>
+		{% else %}
+		<span class="auth-links__login">Вы зашли как, {{ user }} <a class="auth-links__logout" href="{% url 'logout' %}">Выйти</a></span>
+		{% endif %}
+	</div>
 	<div class="content">
 		<div class="container">
 		{% block content %}

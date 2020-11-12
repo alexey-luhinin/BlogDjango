@@ -9,7 +9,6 @@
 
 {% if user.is_superuser %}
 	<div class="admin-only">
-		<span class="admin-only__greeting">Привет, {{ user }}</span>
 		<a class="admin-only__add-article" href={% url 'add_article' %}>Добавить статью</a>
 	</div>
 {% endif %}
@@ -34,7 +33,7 @@
 
 				<div class="content__date">
 					<span class="content__date-text">
-						{{ article.date }}
+						{{ article.date }}  [<b>{{ article.category }}</b>]
 					</span>
 				</div>
 				<div class="content__comments">
