@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 
+from django.contrib.admin.views.decorators import staff_member_required
 
 from django.contrib.auth import login, authenticate
 
@@ -86,6 +87,7 @@ def articles(request):
     return render(request, 'main/articles.html', articles)
 
 
+@staff_member_required
 def add_article(request):
     if request.method == 'POST':
         form = ArticlesForm(request.POST, request.FILES)
