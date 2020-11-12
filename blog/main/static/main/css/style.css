@@ -46,6 +46,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+	min-width: 280px;
 }
 
 
@@ -66,6 +67,7 @@ body{
 .container {
 	max-width: 960px;
 	margin: 0 auto;
+	padding: 0 15px;
 }
 
 .container--flex {
@@ -484,16 +486,20 @@ body{
 /* REGISTRATION PAGE */
 
 /* LOGIN PAGE */
+.login-page {
+	width: 280px;
+	margin: 0 auto;
+}
 
 .login-page__form {
-	width: 50%;
-	margin: 0 auto;
+	width: 100%;
 }
 
 .login-page__table input {
 	border: 1px solid #000;
 	font-size: 16px;
 	margin-top: 5px;
+	width: 100%;
 }
 
 .login-page__table label {
@@ -547,10 +553,10 @@ body{
 	color: #708090;
 	display: inline-block;
 	margin-left: 10px;
-	padding: 5px;
+	padding: 3px;
 	color: #FFF;
 	background: #5f9ea0;
-	font-size: 16px;
+	font-size: 15px;
 	text-align: center;
 	font-style: normal;
 	border: 1px solid #5f9ea0;
@@ -620,3 +626,126 @@ body{
 }
 
 /* CONTACTS PAGE */
+
+@media (max-width: 1200px) {
+	.container{
+		max-width: 960px;
+	}	
+}
+
+@media (max-width: 960px) {
+	.container{
+		max-width: 750px;
+	}	
+}
+
+@media (max-width: 767px) {
+	.container{
+		max-width: none;
+	}	
+	.content__item {
+		width: 48%;
+	}
+	.header__top-menu{
+		flex-direction: column;
+	}
+	.header__menu-item {
+		text-align: right;
+		padding: 0;
+		border: none;
+		box-shadow: 1px 0 0 rgba(255, 255, 255, 0.04);
+	} .header__menu-link { font-family: 'Roboto Slab', serif;
+		color: #d4d4d4;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 15px;
+	}
+	.header__menu-link:hover {
+		color: #f08080;
+	}
+	.header__logo-img {
+		width: 200px;
+	}
+
+	.auth-links {
+		position: absolute;
+		display: inline-block;
+		top: 90px;
+		right:0px;
+		font-style: italic;
+	}
+	.auth-links a{
+		color: #708090;
+		display: inline-block;
+		margin-left: 1px;
+		padding: 1px;
+		color: #FFF;
+		background: #3a3d40;
+		font-size: 13px;
+		text-align: center;
+		font-style: normal;
+		border: 1px solid #3a3d40;
+		border-width: 1px 1px 3px;
+		cursor: pointer;
+	}
+
+	.auth-links__login-user {
+		display: none;
+	}
+}
+
+@media (max-width: 650px) {
+	.container{
+		max-width: none;
+	}	
+	.content__item {
+		width: 95%;
+		margin: 10px;
+	}
+	.header__top-menu{
+		flex-direction: column;
+	}
+	.header__menu-item {
+		text-align: right;
+		padding: 0;
+		border: none;
+		box-shadow: 1px 0 0 rgba(255, 255, 255, 0.04);
+	} .header__menu-link { font-family: 'Roboto Slab', serif;
+		color: #d4d4d4;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 15px;
+	}
+	.header__menu-link:hover {
+		color: #f08080;
+	}
+	.header__logo-img {
+		width: 150px;
+	}
+	.auth-links {
+		position: absolute;
+		display: inline-block;
+		top: 90px;
+		right:0px;
+		font-style: italic;
+	}
+	.auth-links a{
+		color: #708090;
+		display: inline-block;
+		margin-left: 1px;
+		padding: 1px;
+		color: #FFF;
+		background: #3a3d40;
+		font-size: 13px;
+		text-align: center;
+		font-style: normal;
+		border: 1px solid #3a3d40;
+		border-width: 1px 1px 3px;
+		cursor: pointer;
+	}
+	.auth-links__login-user {
+		display: none;
+	}
+}

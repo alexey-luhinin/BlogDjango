@@ -27,7 +27,7 @@
 					<a class="header__menu-link" href={% url 'about' %}>О себе</a>
 				</li>
 				<li class="header__menu-item">
-					<a class="header__menu-link" href={% url 'contacts' %}>мои контакты</a>
+					<a class="header__menu-link" href={% url 'contacts' %}>контакты</a>
 				</li>
 			</ul>
 		</div>
@@ -37,7 +37,8 @@
 		<span class="auth-links__registration"><a href="{% url 'registration' %}">Регистрация</a></span>
 		<span class="auth-links__login"><a href="{% url 'login' %}">Войти</a></span>
 		{% else %}
-		<span class="auth-links__login">Вы зашли как, {{ user }} <a class="auth-links__logout" href="{% url 'logout' %}">Выйти</a></span>
+		<span class="auth-links__login-user">Вы зашли как, {{ user }} </span>
+		<a class="auth-links__logout" href="{% url 'logout' %}">Выйти</a>
 		{% endif %}
 	</div>
 	<div class="content">
