@@ -447,6 +447,10 @@ body{
 	margin: 20px auto;
 }
 
+.registration__form {
+	width: 100%;
+}
+
 .registration label {
 	margin-top: 10px;
 	display: inline-block;
@@ -460,7 +464,7 @@ body{
 }
 
 .registration__input {
-	width: 50%;
+	width: 100%;
 	display: block;	
 	margin: 10px 0;
 	border: 1px solid #000;
@@ -487,8 +491,8 @@ body{
 
 /* LOGIN PAGE */
 .login-page {
-	width: 280px;
-	margin: 0 auto;
+	width: 260px;
+	margin: 20px auto;
 }
 
 .login-page__form {
